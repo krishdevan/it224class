@@ -1,0 +1,52 @@
+##########
+## THIS SCRIPT CONFIGURES THE Member Server (MS) MACHINE 
+## WITH AN IP ADDRESS, PREFIX, GATEWAY AND DNS. THIS SCRIPT
+## ALSO RENAMES THE MS MACHINE
+##########
+
+#
+# CHANGE THE PROMPT TO THE C DRIVE FOR ADDITIONAL SPACE
+#
+cd \
+
+#
+# THE POWERSHELL WAY OF 'FINDING' THE INTERFACE NAME
+#   also called as INTERFACE ALIAS
+# THE FOLLOWING CMDLET GIVES YOU THE INTERFACE ALIAS NAME
+Get-NetIPConfiguration
+
+
+#
+# CREATE A VARIABLE TO HOLD THE NEW IP ADDRESS
+#
+$ipAddress = "192.168.0.20"
+
+#
+# CREATE A VARIABLE TO HOLD THE GATEWAY ADDRESS
+#
+$gateway   = "192.168.0.250"
+
+#
+# Set the Ethernet interface with the above IP Address, Prefix & Default Gateway
+#
+New-NetIPAddress -InterfaceAlias Ethernet -AddressFamily IPv4 -IPAddress $ipAddress -PrefixLength 24 -DefaultGateway $gateway
+
+#
+# Set the Ethernet interface with the correct DNS Server address(es)
+# Run the following two lines one after the other, NOT together
+#
+
+$dnsAddresses = "192.168.0.10", "8.8.4.4", "1.1.1.1"
+
+Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses $dnsAddresses 
+
+#
+# UPDATE POWERSHELL HELP ECOSPACE
+# NOTE: IT IS NORMAL YOU MAY GET ERRORS TOWARD THE VERY END
+#
+Update-Help
+
+#
+# RENAME THIS NODE AND RESTART
+#
+Rename-Computer -NewName IT224-MS -Restart
