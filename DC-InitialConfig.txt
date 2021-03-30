@@ -13,31 +13,37 @@ cd \
 # THE POWERSHELL WAY OF 'FINDING' THE INTERFACE NAME
 #   also called as INTERFACE ALIAS
 # THE FOLLOWING CMDLET GIVES YOU THE INTERFACE ALIAS NAME
+
 Get-NetIPConfiguration
+
+# Create a variable to hold the Interface Alias from the
+# cmdlet above
+
+$interfaceAlias = (Get-NetIPConfiguration).InterfaceAlias
 
 #
 # CREATE A VARIABLE TO HOLD THE NEW IP ADDRESS
 #
-$ipAddress = "192.168.0.10"
+$ipAddress = "IP.Address.Goes.Here"
 
 #
 # CREATE A VARIABLE TO HOLD THE GATEWAY ADDRESS
 #
-$gateway   = "192.168.0.250"
+$gateway   = "Gateway.Address.Goes.Here"
 
 #
 # Set the Ethernet interface with the above IP Address, Prefix & Default Gateway
 #
-New-NetIPAddress -InterfaceAlias Ethernet -AddressFamily IPv4 -IPAddress $ipAddress -PrefixLength 24 -DefaultGateway $gateway
+New-NetIPAddress -InterfaceAlias <variable here> -AddressFamily IPv4 -IPAddress <variable> -PrefixLength 24 -DefaultGateway <variable>
 
 #
 # Set the Ethernet interface with the correct DNS Server address(es)
 # Run the following two lines one after the other, NOT together
 #
 
-$dnsAddresses = "192.168.0.10", "8.8.4.4", "1.1.1.1"
+$dnsAddresses = "192.168.0.10", "1.1.1.1"
 
-Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses $dnsAddresses 
+Set-DnsClientServerAddress -InterfaceAlias <variable> -ServerAddresses <variable>
 
 #
 # UPDATE POWERSHELL HELP ECOSPACE
