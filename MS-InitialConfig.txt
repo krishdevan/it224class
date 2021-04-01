@@ -3,7 +3,11 @@
 ## WITH AN IP ADDRESS, PREFIX, GATEWAY AND DNS. THIS SCRIPT
 ## ALSO RENAMES THE MS MACHINE
 ##########
-
+# 			vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+#			 The IP address for MS server is 192.168.0.20
+#			 The gateway address is the same as DC's
+# 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+##########
 #
 # CHANGE THE PROMPT TO THE C DRIVE FOR ADDITIONAL SPACE
 #

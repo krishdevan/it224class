@@ -3,7 +3,11 @@
 ## AN IP ADDRESS, PREFIX, GATEWAY AND DNS. THIS SCRIPT
 ## ALSO RENAMES THE WINDOWS 10 MACHINE
 ##########
-
+#			 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# 			  The IP address for MS server is 192.168.0.100
+# 			  The gateway address is the same as DC's
+# 			 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+##########
 #
 # CHANGE THE PROMPT TO THE C DRIVE FOR ADDITIONAL SPACE
 #

@@ -3,7 +3,11 @@
 ## AN IP ADDRESS, PREFIX, GATEWAY AND DNS. THIS SCRIPT
 ## ALSO RENAMES THE DC MACHINE
 ##########
-
+# 			vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# 			 The IP address for DC server is 192.168.0.10
+# 			 The gateway address is 192.168.0.250
+# 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+##########
 #
 # CHANGE THE PROMPT TO THE C DRIVE FOR ADDITIONAL SPACE
 #
